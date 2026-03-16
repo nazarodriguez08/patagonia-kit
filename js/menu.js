@@ -101,7 +101,7 @@ closeNav();
 
 function handleKeydown(e) {
 if (e.key === "Escape" || e.key === "Esc") {
-    let consumed = false;  }
+    let consumed = false;
 
     if (isCartOpen()) {
     closeCart();
@@ -116,6 +116,7 @@ if (e.key === "Escape" || e.key === "Esc") {
     if (consumed) {
     e.preventDefault();
     }
+}
 }
 
 function handleNavLinkClick(e) {
