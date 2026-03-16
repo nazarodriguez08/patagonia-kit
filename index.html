@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Patagonia Kit | Kits y Equipos para Escapadas</title>
+<meta
+    name="description"
+    content="Patagonia Kit: armá tu equipo para escapadas a la Patagonia. Kits de camping, mate, abrigo, seguridad y accesorios."
+/>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div class="overlay" id="overlay"></div>
+
+<!-- header -->
+    <header class="header" id="home">
+    <div class="container header__inner">
+<!-- logo -->
+<a href="#home" class="logo" aria-label="Patagonia Kit - Inicio">
+
+        <span class="logo__mark">PK</span>
+        <span class="logo__text">Patagonia Kit</span>
+    </a>
+
+    <!-- navegacion -->
+    <nav class="nav" id="main-nav" aria-label="Navegación principal">
+        <ul class="nav__list">
+        <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="#productos" class="nav__link">Productos</a></li>
+        <li class="nav__item"><a href="#contacto" class="nav__link">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- acciones: carrito + menú hamburguesa -->
+    <div class="header__actions">
+        <!-- boton carrito -->
+        <button
+        class="cart-toggle"
+        id="cart-toggle"
+        aria-label="Ver carrito de compras"
+        aria-haspopup="dialog"
+        aria-controls="cart-drawer"
+        >
+        <!-- Ícono de carrito simple en SVG -->
+        <svg
+            class="cart-toggle__icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+        >
+        <path
+        fill="none"
+        d="M6 6h15l-1.5 8.5H8L6 4H3"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            />
+            <circle cx="10" cy="20" r="1.4" />
+            <circle cx="18" cy="20" r="1.4" />
+        </svg>
+        <span class="cart-badge" id="cart-badge" aria-label="Cantidad de productos en el carrito">
+            0
+        </span>
+        </button>
+
+        <!-- menu hamburguesa (mobile) -->
+        <button
+        class="hamburger"
+        id="hamburger-toggle"
+        aria-label="Abrir menú de navegación"
+        aria-controls="main-nav"
+        aria-expanded="false"
+        >
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        </button>
+    </div>
+    </div>
+</header>
+
+<main>
+    <!-- hero -->
+    <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero__content">
+        <div class="hero__text">
+        <h1 id="hero-title" class="hero__title">
+            Armá tu kit perfecto para explorar la Patagonia.
+        </h1>
+        <p class="hero__subtitle">
+            Combos curados de camping, mate, abrigo, seguridad y accesorios para que
+            solo te preocupes por elegir el próximo destino.
+        </p>
+        <div class="hero__actions">
+            <a href="#productos" class="btn btn--primary" id="btn-hero-products">
+            Ver productos
+            </a>
+            <a href="#about" class="btn btn--ghost">
+            Conocer más
+            </a>
+        </div>
+        <p class="hero__note">
+            Envíos a todo el país · Kits listos para salir YA · Productos testeados en clima extremo.
+        </p>
+        </div>
+        <div class="hero__media">
+        <!-- Imagen/ilustración de montaña/camping (placeholder local) -->
+        <img
+            src="assets/carpamontaña.jpg"
+            alt="Ilustración de carpa y montañas en la Patagonia"
+            class="hero__image"
+        />
+        </div>
+    </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section section--light" id="about" aria-labelledby="about-title">
+    <div class="container section__inner section__inner--split">
+        <div class="section__content">
+        <h2 id="about-title" class="section__title">Sobre Patagonia Kit</h2>
+        <p class="section__text">
+            Patagonia Kit nace de escapadas reales a la Patagonia: noches de viento,
+            mates al amanecer y trekkings donde cada gramo en la mochila importa.
+        </p>
+        <p class="section__text">
+            Seleccionamos equipos y armamos kits pensados para quienes quieren viajar
+            liviano pero seguro, con productos que rinden de verdad en clima frío,
+            lluvia y montaña.
+        </p>
+        <ul class="section__list">
+            <li><strong>Kits inteligentes:</strong> combinación equilibrada de peso, abrigo y utilidad.</li>
+            <li><strong>Productos testeados:</strong> elegidos por experiencia, no por moda.</li>
+            <li><strong>Listo para salir:</strong> abrís la caja, cargás la mochila y arrancás.</li>
+        </ul>
+        </div>
+        <div class="section__media">
+        <img
+            src="assets/kitmesa.jpg"
+            alt="Kit de camping armado sobre una mesa"
+            class="section__image"
+        />
+        </div>
+    </div>
+    </section>
+
+    <!-- productos -->
+    <section class="section" id="productos" aria-labelledby="productos-title">
+    <div class="container">
+        <header class="section__header">
+        <h2 id="productos-title" class="section__title">Kits y productos</h2>
+        <p class="section__text">
+            Filtrá por categoría para encontrar lo que tu próxima escapada necesita.
+        </p>
+        </header>
+
+        <!-- filtros de categorías -->
+        <div class="filters" aria-label="Filtro por categoría de productos">
+        <!-- Botones de filtro generados dinámicamente desde JS -->
+        <div class="filters__list" id="category-filters"></div>
+        </div>
+
+        <!-- grilla de productos -->
+        <div
+        class="products-grid"
+        id="products-grid"
+        aria-live="polite"
+        aria-busy="false"
+        >
+        <!-- cards de producto generadas desde data.js / render.js -->
+        </div>
+
+        <!-- Mensaje cuando no hay resultados -->
+        <p class="products-grid__empty" id="products-empty-message" hidden>
+        No encontramos productos para este filtro. Probá con otra categoría.
+        </p>
+    </div>
+    </section>
+
+    <section class="section section--highlight">
+    <div class="container section__inner section__inner--center">
+        <h2 class="section__title">Listo para la próxima escapada</h2>
+        <p class="section__text">
+    Desde una noche bajo las estrellas hasta una travesía de varios días,
+    tenemos un kit armado para cada tipo de viaje.
+        </p>
+        <a href="#productos" class="btn btn--secondary">
+        Ver todos los kits
+        </a>
+    </div>
+    </section>
+
+    <!-- contacto-->
+    <section class="section section--light" id="contacto" aria-labelledby="contact-title">
+    <div class="container section__inner section__inner--split section__inner--reverse">
+        <div class="section__content">
+        <h2 id="contact-title" class="section__title">Contacto</h2>
+        <p class="section__text">
+            ¿Tenés dudas sobre qué kit te conviene, o querés armar uno a medida
+            para tu próxima travesía? Escribinos y te ayudamos.
+        </p>
+
+        <form class="form" id="contact-form" novalidate>
+            <div class="form__field">
+            <label for="name" class="form__label">Nombre</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                class="form__input"
+                placeholder="Tu nombre completo"
+                required
+                minlength="3"
+            />
+            <p class="form__error" id="error-name"></p>
+            </div>
+
+            <div class="form__field">
+            <label for="email" class="form__label">Email</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                class="form__input"
+                placeholder="tu@mail.com"
+                required
+            />
+            <p class="form__error" id="error-email"></p>
+            </div>
+
+            <div class="form__field">
+            <label for="message" class="form__label">Mensaje</label>
+            <textarea
+                id="message"
+                name="message"
+                class="form__textarea"
+                placeholder="Contanos a dónde vas y qué tipo de viaje pensás hacer..."
+                rows="4"
+                required
+                minlength="10"
+            ></textarea>
+            <p class="form__error" id="error-message"></p>
+            </div>
+
+            <button type="submit" class="btn btn--primary form__submit">
+            Enviar mensaje
+            </button>
+
+            <!-- mensaje de éxito -->
+            <p class="form__success" id="form-success" hidden>
+            ¡Gracias por escribirnos! Te responderemos a la brevedad.
+            </p>
+        </form>
+        </div>
+
+        <div class="section__media">
+        <div class="contact-card">
+            <h3 class="contact-card__title">Atención a viajeros</h3>
+            <p class="contact-card__text">
+            Lunes a viernes de 9 a 18 hs (ARG).
+            </p>
+            <ul class="contact-card__list">
+            <li><strong>Email:</strong> hola@patagoniakit.com</li>
+            <li><strong>WhatsApp:</strong> +54 9 11 0000-0000</li>
+            <li><strong>Ubicación:</strong> Bariloche, Río Negro</li>
+            </ul>
+            <p class="contact-card__hint">
+            También podemos coordinar una videollamada para planear tu equipo.
+            </p>
+        </div>
+        </div>
+    </div>
+    </section>
+</main>
+
+<!-- carrito (drawer lateral) -->
+<aside
+    class="cart-drawer"
+    id="cart-drawer"
+    aria-labelledby="cart-title"
+    aria-modal="true"
+    role="dialog"
+>
+    <header class="cart-drawer__header">
+    <h2 id="cart-title" class="cart-drawer__title">Tu carrito</h2>
+    <button
+        class="cart-drawer__close"
+        id="cart-close"
+        aria-label="Cerrar carrito"
+    >
+        ×
+    </button>
+    </header>
+
+    <div class="cart-drawer__body">
+    <ul class="cart-items" id="cart-items">
+    </ul>
+
+    <!-- mensaje carrito vacío -->
+    <p class="cart-empty" id="cart-empty-message">
+        Tu carrito está vacío. Agregá productos para armar tu kit.
+    </p>
+    </div>
+
+    <footer class="cart-drawer__footer">
+    <div class="cart-summary">
+        <span class="cart-summary__label">Total</span>
+        <span class="cart-summary__value" id="cart-total">$0</span>
+    </div>
+    <div class="cart-actions">
+        <button class="btn btn--ghost btn--small" id="cart-clear">
+        Vaciar carrito
+        </button>
+        <button class="btn btn--primary btn--small" id="cart-checkout">
+        Iniciar compra
+        </button>
+    </div>
+    <p class="cart-note">
+        Los precios están expresados en ARS. El checkout se coordina por email o WhatsApp.
+    </p>
+    </footer>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden>
+    <p class="toast__message" id="toast-message">Producto agregado al carrito</p>
+</div>
+
+<!--footer -->
+<footer class="footer">
+    <div class="container footer__inner">
+    <div class="footer__brand">
+        <span class="footer__logo">Patagonia Kit</span>
+        <p class="footer__text">
+        Kits y equipos pensados para explorar la Patagonia con seguridad y liviandad.
+        </p>
+    </div>
+    <div class="footer__columns">
+        <div class="footer__column">
+        <h3 class="footer__title">Navegación</h3>
+        <ul class="footer__links">
+            <li><a href="#home" class="footer__link">Home</a></li>
+            <li><a href="#about" class="footer__link">About</a></li>
+            <li><a href="#productos" class="footer__link">Productos</a></li>
+            <li><a href="#contacto" class="footer__link">Contacto</a></li>
+        </ul>
+        </div>
+        <div class="footer__column">
+        <h3 class="footer__title">Ayuda</h3>
+        <ul class="footer__links">
+            <li><span class="footer__link footer__link--muted">Preguntas frecuentes</span></li>
+            <li><span class="footer__link footer__link--muted">Envíos y cambios</span></li>
+            <li><span class="footer__link footer__link--muted">Política de garantías</span></li>
+        </ul>
+        </div>
+    </div>
+    <p class="footer__copy">
+        © <span id="current-year"></span> Patagonia Kit. Todos los derechos reservados.
+    </p>
+    </div>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
